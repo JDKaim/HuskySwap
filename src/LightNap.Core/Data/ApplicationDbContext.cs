@@ -37,6 +37,11 @@ namespace LightNap.Core.Data
         public DbSet<ClassDesire> ClassDesires { get; set; } = null!;
 
         /// <summary>
+        /// Gets or sets the class requests DbSet.
+        /// </summary>
+        public DbSet<ClassRequest> ClassRequests { get; set; } = null!;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
         /// </summary>
         /// <param name="options">The DbContext options.</param>

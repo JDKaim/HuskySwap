@@ -1,0 +1,33 @@
+
+<p-card header="Get">
+  <api-response [apiResponse]="classRequest$" errorMessage="Error loading" loadingMessage="Loading...">
+    <ng-template #success let-classRequest>
+      <div class="flex gap-1 mb-1">
+        <p-button [routerLink]="['..']" icon="pi pi-arrow-up" label="See all" />
+        <p-button [routerLink]="['..', id(), 'edit']" icon="pi pi-pencil" label="Edit" />
+      </div>
+      <div class="w-30rem flex flex-column gap-4">
+        <div>
+          <label class="block text-900 font-medium mb-2">Id</label>
+          <div>{{ classRequest.id }}</div>
+        </div>
+        <div>
+          <label class="block text-900 font-medium mb-2">RequestedClassId</label>
+          <div>{{ classRequest.requestedClassId }}</div>
+        </div>
+        <div>
+          <label class="block text-900 font-medium mb-2">OfferedClassId</label>
+          <div>{{ classRequest.offeredClassId }}</div>
+        </div>
+        <div>
+          <label class="block text-900 font-medium mb-2">UserId</label>
+          <div>{{ classRequest.userId }}</div>
+        </div>
+        <div>
+          <label class="block text-900 font-medium mb-2">IsActive</label>
+          <div>{{ classRequest.isActive }}</div>
+        </div>
+      </div>
+    </ng-template>
+  </api-response>
+</p-card>

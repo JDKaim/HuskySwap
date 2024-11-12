@@ -1,0 +1,35 @@
+
+<p-card header="Edit">
+  <api-response [apiResponse]="classRequest$" errorMessage="Error loading" loadingMessage="Loading...">
+    <ng-template #success let-classRequest>
+      <div class="flex gap-1 mb-1">
+        <p-button [routerLink]="['../..']" icon="pi pi-arrow-up" label="See all" />
+        <p-button [routerLink]="['..']" icon="pi pi-arrow-left" label="Back to item" />
+        <p-button (onClick)="deleteClicked($event)" severity="danger" icon="pi pi-trash" label="Delete" />
+        <confirm-popup key="delete" confirmSeverity="danger" confirmIcon="pi pi-trash" />
+      </div>
+      <form [formGroup]="form" (ngSubmit)="saveClicked()" autocomplete="off">
+        <div class="w-30rem flex flex-column gap-4">
+          <div>
+              <label for="requestedClassId" class="block text-900 font-medium mb-2">RequestedClassId</label>
+              <p-inputNumber id="requestedClassId" formControlName="requestedClassId" styleClass="w-full" />
+          </div>
+          <div>
+              <label for="offeredClassId" class="block text-900 font-medium mb-2">OfferedClassId</label>
+              <p-inputNumber id="offeredClassId" formControlName="offeredClassId" styleClass="w-full" />
+          </div>
+          <div>
+              <label for="userId" class="block text-900 font-medium mb-2">UserId</label>
+              <input pInputText id="userId" formControlName="userId" class="w-full" />
+          </div>
+          <div>
+              <p-checkbox label="IsActive" formControlName="isActive" [binary]="true" class="w-full" />
+          </div>
+
+          <error-list [errors]="errors" />
+          <p-button type="submit" label="Save" icon="pi pi-save" severity="success" [disabled]="!form.valid" />
+        </div>
+      </form>
+    </ng-template>
+  </api-response>
+</p-card>
