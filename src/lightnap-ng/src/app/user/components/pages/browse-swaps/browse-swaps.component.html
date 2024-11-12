@@ -1,3 +1,15 @@
 <p-card header="Browse Swaps">
-  <p> List of student swap requests </p>
+  <p>List of student swap requests</p>
+
+
+  <div class="offers-list">
+    <h2>Incoming Offers</h2>
+    <div class="offer-item" *ngFor="let offer of offers">
+      <p><strong>Offer From:</strong> {{ offer.offerer }}</p>
+      <p><strong>Wanted Class:</strong> {{ offer.wantedClass }}</p>
+      <p><strong>Offered Class:</strong> {{ offer.offeredClass }}</p>
+      <button (click)="acceptOffer(offer)" class="accept-button">Accept</button>
+      <button (click)="declineOffer(offer)" class="decline-button">Decline</button>
+    </div>
+  </div>
 </p-card>

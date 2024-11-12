@@ -1,0 +1,46 @@
+.offers-list {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+ 
+  .offer-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+ 
+  .offer-item p {
+    margin: 8px 0;
+  }
+ 
+  .accept-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .decline-button {
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .accept-button:hover {
+    background-color: #45a049;
+  }
+ 
+  .decline-button:hover {
+    background-color: #e03131;
+  }
+ 
