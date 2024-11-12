@@ -1,7 +1,7 @@
 <p-card header="Create Swap">
     <p> Choose which class you are offering and which class you are requesting for! </p>
   
-    <form #swapForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #swapForm="ngForm">
       <div class="form-group">
         <label for="offerClass">Class to Offer: </label>
         <p-dropdown
